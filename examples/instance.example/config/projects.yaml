@@ -1,0 +1,28 @@
+# Example project registry. Copy this whole instance.example/ directory to
+# instance/ (gitignored in your own fork - never commit your real one) and
+# edit it with your own real projects.
+#
+# Each entry's approved_paths.production must point to a real git
+# repository on your machine if you want the git_status skill to work for
+# that project - core/control_plane's git_status route resolves it as
+# Path.home() / approved_paths.production (or an absolute path, which
+# replaces Path.home() entirely - see core/filesystem/safe_path.py).
+
+schema_version: 1
+
+projects:
+  - id: example-project
+    name: Example Project
+    status: active
+    priority: high
+    what_it_is: >
+      Replace this with a one-paragraph description of what this project
+      actually is - its purpose, stage, and why it matters to you.
+    approved_paths:
+      production: "Desktop\\example-project"
+    git_repo: "https://github.com/your-username/example-project"
+    revenue_goal: "optional - delete this field if not applicable"
+    privacy_notes: >
+      Optional - note here if this project handles data belonging to
+      anyone other than you (clients, users, employees), so any agent
+      given access to it can be scoped appropriately.

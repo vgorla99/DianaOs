@@ -1,0 +1,17 @@
+# Example managed skill. Copy to instance/config/skills/ and point
+# `implementation` at a real entry in your own IMPLEMENTATIONS dict
+# (core/agents/implementations.py) - implementation is always a fixed ID,
+# never a Python import path or module reference (see core/skills/models.py).
+
+id: example_skill
+version: 0.1.0
+name: Example Skill
+execution_type: deterministic
+implementation: read_home_state
+approval_level: 0
+allowed_roots: []
+allowed_projects:
+  - example-project
+input_schema: null
+output_schema: null
+enabled: false
